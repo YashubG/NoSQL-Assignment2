@@ -1,0 +1,3 @@
+# Ignore uploading these directories to git
+/!!Misc/
+/Data/
