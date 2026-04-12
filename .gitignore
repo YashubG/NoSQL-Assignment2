@@ -1,0 +1,8 @@
+# Ignore uploading these directories to git
+/!!Misc/
+/Data/
+/build/
+/output/*
+!/output/.gitkeep
+.DS_Store
+stopwords.txt
