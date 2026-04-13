@@ -6,3 +6,4 @@
 !/output/.gitkeep
 .DS_Store
 stopwords.txt
+/target
