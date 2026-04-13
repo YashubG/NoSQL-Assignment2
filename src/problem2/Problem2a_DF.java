@@ -153,7 +153,8 @@ public class Problem2a_DF {
 		private final IntWritable documentFrequency = new IntWritable();
 
 		@Override
-		protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+		protected void reduce(Text key, Iterable<Text> values, Context context)
+				throws IOException, InterruptedException {
 			Set<String> documents = new HashSet<String>();
 			for (Text document : values) {
 				documents.add(document.toString());
@@ -165,8 +166,7 @@ public class Problem2a_DF {
 	}
 
 	public static class TopTermsMapper extends Mapper<LongWritable, Text, NullWritable, Text> {
-		private final PriorityQueue<TermDocumentFrequency> topTerms =
-				new PriorityQueue<TermDocumentFrequency>();
+		private final PriorityQueue<TermDocumentFrequency> topTerms = new PriorityQueue<TermDocumentFrequency>();
 		private final Text outputValue = new Text();
 
 		@Override
@@ -187,8 +187,7 @@ public class Problem2a_DF {
 	}
 
 	public static class TopTermsReducer extends Reducer<NullWritable, Text, Text, IntWritable> {
-		private final PriorityQueue<TermDocumentFrequency> topTerms =
-				new PriorityQueue<TermDocumentFrequency>();
+		private final PriorityQueue<TermDocumentFrequency> topTerms = new PriorityQueue<TermDocumentFrequency>();
 		private final IntWritable outputValue = new IntWritable();
 
 		@Override
