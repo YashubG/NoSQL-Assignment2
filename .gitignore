@@ -1,7 +1,6 @@
 # Ignore uploading these directories to git
 /!!Misc/
 /Data/
-# output .DS_Store is still ignored via the global .DS_Store rule
 .DS_Store
 /target
 .vscode
