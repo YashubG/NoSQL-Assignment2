@@ -2,8 +2,7 @@
 /!!Misc/
 /Data/
 /build/
-/output/*
-!/output/.gitkeep
+# output .DS_Store is still ignored via the global .DS_Store rule
 .DS_Store
 stopwords.txt
 /target
