@@ -1,4 +1,5 @@
 package src.inputformat;
+
 import java.io.IOException;
 
 import org.apache.commons.logging.Log;
