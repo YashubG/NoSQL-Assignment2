@@ -1,0 +1,69 @@
+=======================================
+Running Problem 1(a): Local Mode
+=======================================
+[1] Cleaning...
+[2] Compiling...
+[3] Creating JAR...
+added manifest
+adding: problem1/(in = 0) (out= 0)(stored 0%)
+adding: problem1/Problem1a_TopWords_Local$MapperClass.class(in = 3184) (out= 1409)(deflated 55%)
+adding: problem1/Problem1a_TopWords_Local$ReducerClass.class(in = 1694) (out= 698)(deflated 58%)
+adding: problem1/Problem1a_TopWords_Local.class(in = 2183) (out= 1134)(deflated 48%)
+[4] Running job...
+=======================================
+Top 50 Words:
+=======================================
+category	60477
+this	58684
+first	42117
+other	35721
+city	32768
+two	32513
+american	29117
+united	28736
+county	27665
+time	27544
+university	26860
+states	26679
+world	26359
+years	24047
+used	23480
+people	23476
+war	22965
+state	22510
+history	21655
+school	19863
+york	19585
+national	19460
+john	19187
+year	18851
+age	17479
+march	16984
+april	16896
+north	16893
+known	16802
+part	16737
+three	16694
+south	16549
+made	16544
+january	16057
+population	15969
+september	15599
+area	15390
+october	15311
+july	15194
+high	15120
+press	15101
+through	15095
+june	15046
+town	14971
+film	14880
+including	14877
+early	14770
+see	14758
+december	14757
+life	14597
+=======================================
+Runtime: 44 seconds
+=======================================
+DONE

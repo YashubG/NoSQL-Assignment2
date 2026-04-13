@@ -1,0 +1,16 @@
+pairs(1b) d=1 : 23 sec
+stripes(1c) d=1 : 32 sec
+stripes_imc(1c_imc) d=1 : 29 sec
+pairs_imc(1b_imc) d=1 : 29 sec
+pairs(1b) d=2 : 23 sec
+stripes(1c) d=2 : 32 sec
+pairs_imc(1b_imc) d=2 : 28 sec
+stripes_imc(1c_imc) d=2 : 29 sec
+pairs(1b) d=3 : 23 sec
+stripes(1c) d=3 : 31 sec
+pairs_imc(1b_imc) d=3 : 29 sec
+stripes_imc(1c_imc) d=3 : 30 sec
+pairs(1b) d=4 : 23 sec
+stripes(1c) d=4 : 32 sec
+stripes_imc(1c_imc) d=4 : 29 sec
+pairs_imc(1b_imc) d=4 : 29 sec

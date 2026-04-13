@@ -1,0 +1,390 @@
+=======================================
+Running Problem 1(e): STRIPES + IMC (Local)
+=======================================
+[1] Cleaning...
+[2] Compiling...
+[3] Creating JAR...
+added manifest
+adding: problem1/(in = 0) (out= 0)(stored 0%)
+adding: problem1/Problem1b_Pairs_IMC_Local$MapperClass.class(in = 4720) (out= 2259)(deflated 52%)
+adding: problem1/Problem1b_Pairs_IMC_Local$ReducerClass.class(in = 1697) (out= 700)(deflated 58%)
+adding: problem1/Problem1c_Stripes_IMC_Local$ReducerClass.class(in = 2256) (out= 942)(deflated 58%)
+adding: problem1/Problem1b_Pairs_IMC_Local.class(in = 2090) (out= 1084)(deflated 48%)
+adding: problem1/Problem1c_Stripes_IMC_Local.class(in = 2188) (out= 1127)(deflated 48%)
+adding: problem1/Problem1c_Stripes_IMC_Local$MapperClass.class(in = 4943) (out= 2313)(deflated 53%)
+[4] Running job (d=1)...
+2026-04-13 20:44:10,977 INFO impl.MetricsConfig: Loaded properties from hadoop-metrics2.properties
+2026-04-13 20:44:11,062 INFO impl.MetricsSystemImpl: Scheduled Metric snapshot period at 10 second(s).
+2026-04-13 20:44:11,062 INFO impl.MetricsSystemImpl: JobTracker metrics system started
+2026-04-13 20:44:11,180 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2026-04-13 20:44:11,322 INFO input.FileInputFormat: Total input files to process : 1
+2026-04-13 20:44:11,347 INFO mapreduce.JobSubmitter: number of splits:5
+2026-04-13 20:44:11,493 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_local1311541833_0001
+2026-04-13 20:44:11,493 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2026-04-13 20:44:11,762 INFO mapred.LocalDistributedCacheManager: Localized file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/top50.txt as file:/home/yashubg/hadoop_tmp/mapred/local/job_local1311541833_0001_73a1733f-b515-4e69-927b-859495097983/top50.txt
+2026-04-13 20:44:11,894 INFO mapreduce.Job: The url to track the job: http://localhost:8080/
+2026-04-13 20:44:11,895 INFO mapreduce.Job: Running job: job_local1311541833_0001
+2026-04-13 20:44:11,896 INFO mapred.LocalJobRunner: OutputCommitter set in config null
+2026-04-13 20:44:11,903 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:11,905 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:11,905 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:11,906 INFO mapred.LocalJobRunner: OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+2026-04-13 20:44:11,961 INFO mapred.LocalJobRunner: Waiting for map tasks
+2026-04-13 20:44:11,962 INFO mapred.LocalJobRunner: Starting task: attempt_local1311541833_0001_m_000000_0
+2026-04-13 20:44:11,999 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:12,000 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:12,000 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:12,073 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-04-13 20:44:12,079 INFO mapred.MapTask: Processing split: file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/Data/wiki_all_fixed.txt:0+33554432
+2026-04-13 20:44:12,124 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-04-13 20:44:12,124 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-04-13 20:44:12,124 INFO mapred.MapTask: soft limit at 83886080
+2026-04-13 20:44:12,124 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-04-13 20:44:12,124 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-04-13 20:44:12,128 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-04-13 20:44:12,903 INFO mapreduce.Job: Job job_local1311541833_0001 running in uber mode : false
+2026-04-13 20:44:12,904 INFO mapreduce.Job:  map 0% reduce 0%
+2026-04-13 20:44:17,911 INFO mapred.LocalJobRunner: 
+2026-04-13 20:44:17,912 INFO mapred.MapTask: Starting flush of map output
+2026-04-13 20:44:17,912 INFO mapred.MapTask: Spilling map output
+2026-04-13 20:44:17,912 INFO mapred.MapTask: bufstart = 0; bufend = 13335; bufvoid = 104857600
+2026-04-13 20:44:17,912 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214240(104856960); length = 157/6553600
+2026-04-13 20:44:17,926 INFO mapred.MapTask: Finished spill 0
+2026-04-13 20:44:17,943 INFO mapred.Task: Task:attempt_local1311541833_0001_m_000000_0 is done. And is in the process of committing
+2026-04-13 20:44:17,946 INFO mapred.LocalJobRunner: map
+2026-04-13 20:44:17,946 INFO mapred.Task: Task 'attempt_local1311541833_0001_m_000000_0' done.
+2026-04-13 20:44:17,958 INFO mapred.Task: Final Counters for attempt_local1311541833_0001_m_000000_0: Counters: 17
+	File System Counters
+		FILE: Number of bytes read=33569875
+		FILE: Number of bytes written=668118
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=328836
+		Map output records=40
+		Map output bytes=13335
+		Map output materialized bytes=13486
+		Input split bytes=149
+		Combine input records=0
+		Spilled Records=40
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=348
+		Total committed heap usage (bytes)=944766976
+	File Input Format Counters 
+		Bytes Read=33558528
+2026-04-13 20:44:17,958 INFO mapred.LocalJobRunner: Finishing task: attempt_local1311541833_0001_m_000000_0
+2026-04-13 20:44:17,958 INFO mapred.LocalJobRunner: Starting task: attempt_local1311541833_0001_m_000001_0
+2026-04-13 20:44:17,960 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:17,960 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:17,960 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:17,960 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-04-13 20:44:17,963 INFO mapred.MapTask: Processing split: file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/Data/wiki_all_fixed.txt:33554432+33554432
+2026-04-13 20:44:17,975 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-04-13 20:44:17,975 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-04-13 20:44:17,975 INFO mapred.MapTask: soft limit at 83886080
+2026-04-13 20:44:17,975 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-04-13 20:44:17,975 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-04-13 20:44:17,976 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-04-13 20:44:18,921 INFO mapreduce.Job:  map 100% reduce 0%
+2026-04-13 20:44:23,177 INFO mapred.LocalJobRunner: 
+2026-04-13 20:44:23,177 INFO mapred.MapTask: Starting flush of map output
+2026-04-13 20:44:23,177 INFO mapred.MapTask: Spilling map output
+2026-04-13 20:44:23,178 INFO mapred.MapTask: bufstart = 0; bufend = 13667; bufvoid = 104857600
+2026-04-13 20:44:23,178 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214244(104856976); length = 153/6553600
+2026-04-13 20:44:23,180 INFO mapred.MapTask: Finished spill 0
+2026-04-13 20:44:23,184 INFO mapred.Task: Task:attempt_local1311541833_0001_m_000001_0 is done. And is in the process of committing
+2026-04-13 20:44:23,187 INFO mapred.LocalJobRunner: map
+2026-04-13 20:44:23,187 INFO mapred.Task: Task 'attempt_local1311541833_0001_m_000001_0' done.
+2026-04-13 20:44:23,188 INFO mapred.Task: Final Counters for attempt_local1311541833_0001_m_000001_0: Counters: 17
+	File System Counters
+		FILE: Number of bytes read=67129171
+		FILE: Number of bytes written=681968
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=287909
+		Map output records=39
+		Map output bytes=13667
+		Map output materialized bytes=13818
+		Input split bytes=149
+		Combine input records=0
+		Spilled Records=39
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=497
+		Total committed heap usage (bytes)=994574336
+	File Input Format Counters 
+		Bytes Read=33558528
+2026-04-13 20:44:23,188 INFO mapred.LocalJobRunner: Finishing task: attempt_local1311541833_0001_m_000001_0
+2026-04-13 20:44:23,188 INFO mapred.LocalJobRunner: Starting task: attempt_local1311541833_0001_m_000002_0
+2026-04-13 20:44:23,191 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:23,191 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:23,191 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:23,191 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-04-13 20:44:23,195 INFO mapred.MapTask: Processing split: file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/Data/wiki_all_fixed.txt:67108864+33554432
+2026-04-13 20:44:23,207 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-04-13 20:44:23,207 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-04-13 20:44:23,207 INFO mapred.MapTask: soft limit at 83886080
+2026-04-13 20:44:23,207 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-04-13 20:44:23,208 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-04-13 20:44:23,209 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-04-13 20:44:27,602 INFO mapred.LocalJobRunner: 
+2026-04-13 20:44:27,603 INFO mapred.MapTask: Starting flush of map output
+2026-04-13 20:44:27,603 INFO mapred.MapTask: Spilling map output
+2026-04-13 20:44:27,603 INFO mapred.MapTask: bufstart = 0; bufend = 13538; bufvoid = 104857600
+2026-04-13 20:44:27,603 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214244(104856976); length = 153/6553600
+2026-04-13 20:44:27,606 INFO mapred.MapTask: Finished spill 0
+2026-04-13 20:44:27,609 INFO mapred.Task: Task:attempt_local1311541833_0001_m_000002_0 is done. And is in the process of committing
+2026-04-13 20:44:27,610 INFO mapred.LocalJobRunner: map
+2026-04-13 20:44:27,611 INFO mapred.Task: Task 'attempt_local1311541833_0001_m_000002_0' done.
+2026-04-13 20:44:27,611 INFO mapred.Task: Final Counters for attempt_local1311541833_0001_m_000002_0: Counters: 17
+	File System Counters
+		FILE: Number of bytes read=100688467
+		FILE: Number of bytes written=695687
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=277657
+		Map output records=39
+		Map output bytes=13538
+		Map output materialized bytes=13687
+		Input split bytes=149
+		Combine input records=0
+		Spilled Records=39
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=125
+		Total committed heap usage (bytes)=1065877504
+	File Input Format Counters 
+		Bytes Read=33558528
+2026-04-13 20:44:27,611 INFO mapred.LocalJobRunner: Finishing task: attempt_local1311541833_0001_m_000002_0
+2026-04-13 20:44:27,611 INFO mapred.LocalJobRunner: Starting task: attempt_local1311541833_0001_m_000003_0
+2026-04-13 20:44:27,612 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:27,613 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:27,613 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:27,613 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-04-13 20:44:27,616 INFO mapred.MapTask: Processing split: file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/Data/wiki_all_fixed.txt:100663296+33554432
+2026-04-13 20:44:27,628 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-04-13 20:44:27,628 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-04-13 20:44:27,628 INFO mapred.MapTask: soft limit at 83886080
+2026-04-13 20:44:27,628 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-04-13 20:44:27,628 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-04-13 20:44:27,630 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-04-13 20:44:32,096 INFO mapred.LocalJobRunner: 
+2026-04-13 20:44:32,097 INFO mapred.MapTask: Starting flush of map output
+2026-04-13 20:44:32,098 INFO mapred.MapTask: Spilling map output
+2026-04-13 20:44:32,098 INFO mapred.MapTask: bufstart = 0; bufend = 13541; bufvoid = 104857600
+2026-04-13 20:44:32,098 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214240(104856960); length = 157/6553600
+2026-04-13 20:44:32,100 INFO mapred.MapTask: Finished spill 0
+2026-04-13 20:44:32,104 INFO mapred.Task: Task:attempt_local1311541833_0001_m_000003_0 is done. And is in the process of committing
+2026-04-13 20:44:32,106 INFO mapred.LocalJobRunner: map
+2026-04-13 20:44:32,106 INFO mapred.Task: Task 'attempt_local1311541833_0001_m_000003_0' done.
+2026-04-13 20:44:32,107 INFO mapred.Task: Final Counters for attempt_local1311541833_0001_m_000003_0: Counters: 17
+	File System Counters
+		FILE: Number of bytes read=134247763
+		FILE: Number of bytes written=709412
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=278454
+		Map output records=40
+		Map output bytes=13541
+		Map output materialized bytes=13693
+		Input split bytes=149
+		Combine input records=0
+		Spilled Records=40
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=115
+		Total committed heap usage (bytes)=1128267776
+	File Input Format Counters 
+		Bytes Read=33558528
+2026-04-13 20:44:32,107 INFO mapred.LocalJobRunner: Finishing task: attempt_local1311541833_0001_m_000003_0
+2026-04-13 20:44:32,107 INFO mapred.LocalJobRunner: Starting task: attempt_local1311541833_0001_m_000004_0
+2026-04-13 20:44:32,108 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:32,109 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:32,109 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:32,109 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-04-13 20:44:32,111 INFO mapred.MapTask: Processing split: file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/Data/wiki_all_fixed.txt:134217728+22253737
+2026-04-13 20:44:32,124 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+2026-04-13 20:44:32,124 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+2026-04-13 20:44:32,124 INFO mapred.MapTask: soft limit at 83886080
+2026-04-13 20:44:32,124 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+2026-04-13 20:44:32,124 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+2026-04-13 20:44:32,125 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+2026-04-13 20:44:35,094 INFO mapred.LocalJobRunner: 
+2026-04-13 20:44:35,094 INFO mapred.MapTask: Starting flush of map output
+2026-04-13 20:44:35,094 INFO mapred.MapTask: Spilling map output
+2026-04-13 20:44:35,095 INFO mapred.MapTask: bufstart = 0; bufend = 13353; bufvoid = 104857600
+2026-04-13 20:44:35,095 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214248(104856992); length = 149/6553600
+2026-04-13 20:44:35,100 INFO mapred.MapTask: Finished spill 0
+2026-04-13 20:44:35,104 INFO mapred.Task: Task:attempt_local1311541833_0001_m_000004_0 is done. And is in the process of committing
+2026-04-13 20:44:35,107 INFO mapred.LocalJobRunner: map
+2026-04-13 20:44:35,107 INFO mapred.Task: Task 'attempt_local1311541833_0001_m_000004_0' done.
+2026-04-13 20:44:35,108 INFO mapred.Task: Final Counters for attempt_local1311541833_0001_m_000004_0: Counters: 17
+	File System Counters
+		FILE: Number of bytes read=156501756
+		FILE: Number of bytes written=722944
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=196775
+		Map output records=38
+		Map output bytes=13353
+		Map output materialized bytes=13500
+		Input split bytes=149
+		Combine input records=0
+		Spilled Records=38
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=89
+		Total committed heap usage (bytes)=1187512320
+	File Input Format Counters 
+		Bytes Read=22253737
+2026-04-13 20:44:35,108 INFO mapred.LocalJobRunner: Finishing task: attempt_local1311541833_0001_m_000004_0
+2026-04-13 20:44:35,108 INFO mapred.LocalJobRunner: map task executor complete.
+2026-04-13 20:44:35,113 INFO mapred.LocalJobRunner: Waiting for reduce tasks
+2026-04-13 20:44:35,114 INFO mapred.LocalJobRunner: Starting task: attempt_local1311541833_0001_r_000000_0
+2026-04-13 20:44:35,124 INFO output.PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+2026-04-13 20:44:35,124 INFO output.FileOutputCommitter: File Output Committer Algorithm version is 2
+2026-04-13 20:44:35,124 INFO output.FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+2026-04-13 20:44:35,125 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+2026-04-13 20:44:35,131 INFO mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@560c1867
+2026-04-13 20:44:35,134 WARN impl.MetricsSystemImpl: JobTracker metrics system already initialized!
+2026-04-13 20:44:35,168 INFO reduce.MergeManagerImpl: MergerManager: memoryLimit=1267256448, maxSingleShuffleLimit=316814112, mergeThreshold=836389312, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+2026-04-13 20:44:35,173 INFO reduce.EventFetcher: attempt_local1311541833_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+2026-04-13 20:44:35,220 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1311541833_0001_m_000000_0 decomp: 13482 len: 13486 to MEMORY
+2026-04-13 20:44:35,226 INFO reduce.InMemoryMapOutput: Read 13482 bytes from map-output for attempt_local1311541833_0001_m_000000_0
+2026-04-13 20:44:35,229 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 13482, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->13482
+2026-04-13 20:44:35,235 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1311541833_0001_m_000003_0 decomp: 13689 len: 13693 to MEMORY
+2026-04-13 20:44:35,236 INFO reduce.InMemoryMapOutput: Read 13689 bytes from map-output for attempt_local1311541833_0001_m_000003_0
+2026-04-13 20:44:35,238 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 13689, inMemoryMapOutputs.size() -> 2, commitMemory -> 13482, usedMemory ->27171
+2026-04-13 20:44:35,240 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1311541833_0001_m_000001_0 decomp: 13814 len: 13818 to MEMORY
+2026-04-13 20:44:35,242 INFO reduce.InMemoryMapOutput: Read 13814 bytes from map-output for attempt_local1311541833_0001_m_000001_0
+2026-04-13 20:44:35,243 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 13814, inMemoryMapOutputs.size() -> 3, commitMemory -> 27171, usedMemory ->40985
+2026-04-13 20:44:35,247 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1311541833_0001_m_000004_0 decomp: 13496 len: 13500 to MEMORY
+2026-04-13 20:44:35,249 INFO reduce.InMemoryMapOutput: Read 13496 bytes from map-output for attempt_local1311541833_0001_m_000004_0
+2026-04-13 20:44:35,250 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 13496, inMemoryMapOutputs.size() -> 4, commitMemory -> 40985, usedMemory ->54481
+2026-04-13 20:44:35,253 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1311541833_0001_m_000002_0 decomp: 13683 len: 13687 to MEMORY
+2026-04-13 20:44:35,255 INFO reduce.InMemoryMapOutput: Read 13683 bytes from map-output for attempt_local1311541833_0001_m_000002_0
+2026-04-13 20:44:35,256 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 13683, inMemoryMapOutputs.size() -> 5, commitMemory -> 54481, usedMemory ->68164
+2026-04-13 20:44:35,257 INFO reduce.EventFetcher: EventFetcher is interrupted.. Returning
+2026-04-13 20:44:35,259 INFO mapred.LocalJobRunner: 5 / 5 copied.
+2026-04-13 20:44:35,260 INFO reduce.MergeManagerImpl: finalMerge called with 5 in-memory map-outputs and 0 on-disk map-outputs
+2026-04-13 20:44:35,270 INFO mapred.Merger: Merging 5 sorted segments
+2026-04-13 20:44:35,271 INFO mapred.Merger: Down to the last merge-pass, with 5 segments left of total size: 68124 bytes
+2026-04-13 20:44:35,279 INFO reduce.MergeManagerImpl: Merged 5 segments, 68164 bytes to disk to satisfy reduce memory limit
+2026-04-13 20:44:35,280 INFO reduce.MergeManagerImpl: Merging 1 files, 68160 bytes from disk
+2026-04-13 20:44:35,282 INFO reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+2026-04-13 20:44:35,282 INFO mapred.Merger: Merging 1 sorted segments
+2026-04-13 20:44:35,283 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 68148 bytes
+2026-04-13 20:44:35,283 INFO mapred.LocalJobRunner: 5 / 5 copied.
+2026-04-13 20:44:35,289 INFO Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+2026-04-13 20:44:35,338 INFO mapred.Task: Task:attempt_local1311541833_0001_r_000000_0 is done. And is in the process of committing
+2026-04-13 20:44:35,339 INFO mapred.LocalJobRunner: 5 / 5 copied.
+2026-04-13 20:44:35,340 INFO mapred.Task: Task attempt_local1311541833_0001_r_000000_0 is allowed to commit now
+2026-04-13 20:44:35,342 INFO output.FileOutputCommitter: Saved output of task 'attempt_local1311541833_0001_r_000000_0' to file:/home/yashubg/Sem6_Stuff/NoSQL_Assignment-2/Assignment2/output/problem1c_imc_local_d1
+2026-04-13 20:44:35,344 INFO mapred.LocalJobRunner: reduce > reduce
+2026-04-13 20:44:35,344 INFO mapred.Task: Task 'attempt_local1311541833_0001_r_000000_0' done.
+2026-04-13 20:44:35,345 INFO mapred.Task: Final Counters for attempt_local1311541833_0001_r_000000_0: Counters: 24
+	File System Counters
+		FILE: Number of bytes read=156638260
+		FILE: Number of bytes written=804935
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=41
+		Reduce shuffle bytes=68184
+		Reduce input records=196
+		Reduce output records=41
+		Spilled Records=196
+		Shuffled Maps =5
+		Failed Shuffles=0
+		Merged Map outputs=5
+		GC time elapsed (ms)=0
+		Total committed heap usage (bytes)=1187512320
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Output Format Counters 
+		Bytes Written=13831
+2026-04-13 20:44:35,346 INFO mapred.LocalJobRunner: Finishing task: attempt_local1311541833_0001_r_000000_0
+2026-04-13 20:44:35,346 INFO mapred.LocalJobRunner: reduce task executor complete.
+2026-04-13 20:44:35,935 INFO mapreduce.Job:  map 100% reduce 100%
+2026-04-13 20:44:35,935 INFO mapreduce.Job: Job job_local1311541833_0001 completed successfully
+2026-04-13 20:44:35,960 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=648775292
+		FILE: Number of bytes written=4283064
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+	Map-Reduce Framework
+		Map input records=1369631
+		Map output records=196
+		Map output bytes=67434
+		Map output materialized bytes=68184
+		Input split bytes=745
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=41
+		Reduce shuffle bytes=68184
+		Reduce input records=196
+		Reduce output records=41
+		Spilled Records=392
+		Shuffled Maps =5
+		Failed Shuffles=0
+		Merged Map outputs=5
+		GC time elapsed (ms)=1174
+		Total committed heap usage (bytes)=6508511232
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=156487849
+	File Output Format Counters 
+		Bytes Written=13831
+=======================================
+Sample Output:
+=======================================
+age	{lt=15, population=167, party=23, time=196, first=288, game=45, name=65, nintendo=2, barbarian=3, state=47, city=112, chinese=16, history=182, people=203, this=247, federal=5, japan=19, grey=7, age=736, university=158, county=66, st=41, other=149, united=40, two=128, games=26, gt=24, school=223, son=63, states=59, years=4829, category=101, used=69}
+apos	{}
+barbarian	{lt=1, time=10, first=9, game=1, name=5, barbarian=26, state=2, city=2, chinese=33, history=4, people=4, this=12, age=3, st=2, university=7, united=1, other=7, two=5, games=3, gt=1, son=1, states=1, category=1, years=3, used=10}
+category	{guangdong=8, lt=1338, population=23, party=741, time=160, first=273, game=265, nintendo=41, name=86, barbarian=1, state=765, city=1025, chinese=189, history=1645, html=23, people=8762, federal=136, this=210, mathml=2, japan=370, grey=16, age=101, owl=3, university=2241, county=3808, st=703, other=130, united=2945, two=85, games=1057, gt=61, school=616, son=21, http=6, states=2273, years=101, category=76990, used=59}
+chinese	{guangdong=18, lt=10, population=61, party=84, time=84, first=158, game=17, name=142, nintendo=1, barbarian=33, state=82, city=90, chinese=1460, history=219, people=192, this=193, federal=4, japan=80, grey=8, age=16, owl=2, university=137, st=28, county=10, other=207, united=45, two=98, games=13, gt=8, school=43, son=28, states=33, years=63, category=189, used=141}
+city	{guangdong=4, lt=83, population=1365, party=141, time=445, first=891, game=117, nintendo=6, name=516, barbarian=2, state=892, city=7578, chinese=90, history=743, html=20, people=957, federal=170, this=715, japan=160, grey=16, age=112, owl=4, university=739, county=2062, st=413, other=671, united=627, two=681, games=98, gt=108, school=756, son=87, www=2, states=876, years=397, category=1025, used=218}
+county	{guangdong=6, lt=79, population=671, party=144, time=149, first=355, game=12, name=193, state=1530, city=2062, chinese=10, history=727, html=3, people=678, federal=49, this=230, japan=9, grey=10, age=66, university=264, county=15822, st=242, other=268, united=1276, two=380, games=12, gt=37, school=799, son=26, states=466, years=156, category=3808, used=87}
+federal	{population=53, party=138, lt=10, time=52, first=108, name=21, state=449, city=170, chinese=4, history=55, people=54, federal=684, this=108, japan=4, grey=3, age=5, university=70, county=49, st=35, other=105, united=146, two=87, games=8, gt=11, school=30, son=1, states=326, years=71, category=136, used=55}
+first	{guangdong=3, lt=70, population=100, party=500, time=2384, first=4152, game=762, nintendo=15, name=692, barbarian=9, state=673, city=891, chinese=158, history=1273, html=11, people=413, federal=108, this=2298, mathml=1, japan=235, grey=32, age=288, owl=9, university=758, county=355, st=389, other=807, united=890, two=1853, games=284, gt=108, school=610, son=295, www=3, http=2, states=421, years=1178, category=273, used=836}
+game	{lt=18, party=82, population=3, time=329, first=762, game=2430, nintendo=238, name=102, barbarian=1, state=70, city=117, chinese=17, history=161, html=5, people=67, this=464, japan=85, grey=9, age=45, owl=1, university=58, county=12, st=61, other=258, united=96, two=312, games=702, gt=21, school=71, son=17, states=35, years=110, category=265, used=207}
+games	{lt=24, party=23, population=1, time=238, first=284, game=702, nintendo=126, name=29, barbarian=3, state=37, city=98, chinese=13, history=91, html=1, people=36, federal=8, this=157, japan=42, grey=4, age=26, owl=5, university=61, county=12, st=43, other=250, united=60, two=258, games=1520, gt=25, school=32, son=2, states=32, years=89, category=1057, used=94}
+grey	{lt=14, population=1, party=8, time=15, first=32, game=9, name=16, nintendo=3, state=18, city=16, chinese=8, history=14, people=15, federal=3, this=43, japan=3, grey=306, age=7, owl=169, university=13, county=10, st=26, other=24, united=6, two=29, gt=17, games=4, school=38, son=11, states=2, years=12, category=16, used=12}
+gt	{guangdong=1, lt=23191, population=43, party=46, time=43, first=108, game=21, nintendo=2, name=148, barbarian=1, state=42, city=108, chinese=8, history=79, html=2, people=32, federal=11, this=120, mathml=6, japan=36, grey=17, age=24, owl=1, university=46, county=37, st=79, other=57, united=302, two=60, games=25, gt=960, school=16, son=15, http=1, states=202, years=33, category=61, used=58}
+guangdong	{university=21, county=6, st=16, other=6, guangdong=108, united=3, party=4, lt=3, population=2, two=1, time=3, first=3, name=2, gt=1, state=1, city=4, chinese=18, history=1, states=3, people=19, category=8, this=4, used=1}
+history	{guangdong=1, lt=77, population=135, party=148, time=519, first=1273, game=161, nintendo=15, name=265, barbarian=4, state=449, city=743, chinese=219, history=3036, html=2, people=421, federal=55, this=618, mathml=1, japan=102, grey=14, age=182, owl=4, university=1289, county=727, st=234, other=381, united=527, two=337, games=91, gt=79, school=282, son=52, www=4, states=263, years=438, category=1645, used=220}
+html	{lt=5, population=1, time=1, first=11, game=5, name=3, state=27, city=20, history=2, html=76, people=3, this=18, mathml=9, japan=1, university=3, county=3, st=1, united=33, other=12, two=5, gt=2, games=1, school=1, son=1, www=2, http=2, states=3, category=23, years=1, used=11}
+http	{html=2, http=14, other=4, category=6, this=7, used=13, first=2, name=2, gt=1}
+japan	{lt=34, population=23, party=27, time=87, first=235, game=85, nintendo=36, name=55, state=55, city=160, chinese=80, history=102, html=1, people=110, this=97, federal=4, japan=1430, grey=3, age=19, university=109, county=9, st=67, other=114, united=221, two=75, games=42, gt=36, school=47, son=16, states=148, years=42, category=370, used=84}
+lt	{guangdong=3, lt=676, population=25, party=48, time=57, first=70, game=18, nintendo=2, name=128, barbarian=1, state=67, city=83, chinese=10, history=77, html=5, people=59, federal=10, this=78, mathml=7, japan=34, grey=14, age=15, owl=2, university=61, county=79, st=130, other=45, united=251, two=37, games=24, gt=23191, school=20, son=23, states=342, years=24, category=1338, used=26}
+mathml	{history=1, html=9, other=8, people=1, category=2, lt=7, this=6, mathml=98, used=5, first=1, gt=6}
+=======================================
+Runtime: 27 seconds
+=======================================
+DONE
