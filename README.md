@@ -57,6 +57,7 @@ This project implements several **MapReduce** algorithms in Java on **Apache Had
 ├── scripts/
 │   ├── run_problem1a.sh                   # Run Problem 1(a) on HDFS
 │   ├── run_problem2.sh                    # Run Problem 2(a) locally/HDFS
+│   ├── run_2a.sh                          # Run Problem 2(a) on HDFS (full pipeline)
 │   ├── run_2b.sh                          # Run Problem 2(b) on HDFS
 │   └── extract_top100.sh                  # Extract top-100 DF terms
 ├── build/                                 # Compiled .class files and JARs
@@ -299,18 +300,49 @@ javac -classpath "$(hadoop classpath)" -d build/ \
 cd build && jar -cvf problem1a.jar . && cd ..
 ```
 
-### Run on Hadoop
+### Run Problem 1 on Hadoop (Local Mode)
 ```bash
-# Problem 1(a) — Top 50 Words
-./scripts/run_problem1a.sh
+# Step 1: Merge dataset files
+bash scripts/DataMerger.sh
 
-# Problem 2(a) — Document Frequency
-./scripts/run_problem2.sh sample   # 50 articles
-./scripts/run_problem2.sh full     # 10,000 articles
+# Step 2: Problem 1(a) — Top 50 Words
+bash scripts/run_problem1a.sh
 
-# Problem 2(b) — TF-IDF Scoring
-./scripts/run_2b.sh
+# Step 3: All co-occurrence experiments (Pairs, Stripes, IMC variants)
+bash scripts/run_all_experiments_in_prob1.sh
 ```
+Results are stored in `output/`.
+
+### Run Problem 2a — Document Frequency (HDFS)
+```bash
+# Step 1: Build the JAR
+bash build.sh
+
+# Step 2: Run Problem 2a (DF + Top-100 extraction)
+bash scripts/run_2a.sh
+```
+This runs a two-job MapReduce pipeline on HDFS:
+- **Job 1** — Computes Document Frequency (DF) for every stemmed term across all 10,000 articles.
+- **Job 2** — Extracts the top 100 terms by DF using a min-heap.
+
+Output:
+- `output/df_output.tsv` — Full DF listing (all terms)
+- `output/df_top100.tsv` — Top 100 terms by document frequency
+
+The top-100 file is also automatically uploaded to HDFS at `/user/$USER/friend_df_top100.tsv` for use by Problem 2b.
+
+> **Note:** For local-mode runs (without HDFS), you can also use:
+> ```bash
+> bash scripts/run_problem2.sh sample   # 50 articles
+> bash scripts/run_problem2.sh full     # 10,000 articles
+> ```
+
+### Run Problem 2b — TF-IDF Scoring (HDFS)
+```bash
+# Step 3: Run Problem 2b (requires 2a output on HDFS)
+bash scripts/run_2b.sh
+```
+Output: `output/tfidf_output.tsv`
 
 ---
 

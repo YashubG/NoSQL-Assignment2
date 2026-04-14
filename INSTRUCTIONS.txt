@@ -1,0 +1,59 @@
+Instructions to run Problem 1:
+Step-1) Have the Dataset unzipped in your current working directory, the same as this one.
+Step-2) Open terminal
+Step-3) Run -> | bash scripts/DataMerger.sh |
+Step-4) Run -> | bash scripts/run_problem1a.sh |
+Step-5) Run -> | bash scripts/run_all_experiments_in_prob1.sh |
+Step-6) All the results have been stored in the outputs/ folder.
+
+-----------------------------------------------------------------------
+
+Instructions to run Problem 2a (Document Frequency):
+
+Pre-requisites:
+  - Hadoop must be running and accessible via the `hadoop` and `hdfs` commands.
+  - The Wikipedia dataset must be uploaded to HDFS at:
+      /user/$USER/input/wiki_full/Wikipedia-EN-20120601_ARTICLES
+  - The stopwords.txt file must be uploaded to HDFS at:
+      /user/$USER/stopwords.txt
+  - Java 11 and Maven must be installed.
+
+Step-1) Build the JAR file:
+        Run -> | bash build.sh |
+        This produces problem2.jar in the project root directory.
+
+Step-2) Run Problem 2a (Document Frequency + Top-100 extraction):
+        Run -> | bash scripts/run_2a.sh |
+        This runs a two-job MapReduce pipeline:
+          Job 1 — Computes Document Frequency (DF) for every stemmed term
+                  across all 10,000 Wikipedia articles.
+          Job 2 — Extracts the top 100 terms by DF using a min-heap.
+        Output:
+          output/df_output.tsv      — Full DF listing (all terms)
+          output/df_top100.tsv      — Top 100 terms by document frequency
+        The top-100 file is also automatically uploaded to HDFS at
+          /user/$USER/friend_df_top100.tsv  (required input for Problem 2b).
+
+-----------------------------------------------------------------------
+
+Instructions to run Problem 2b (TF-IDF Scorer):
+
+Pre-requisites:
+  - Hadoop must be running and accessible via the `hadoop` and `hdfs` commands.
+  - The Wikipedia dataset must be uploaded to HDFS at:
+      /user/$USER/input/wiki_full/Wikipedia-EN-20120601_ARTICLES
+  - The stopwords.txt file must be uploaded to HDFS at:
+      /user/$USER/stopwords.txt
+  - Java 11 and Maven must be installed.
+
+Step-1) Build the JAR file:
+        Run -> | bash build.sh |
+        This produces problem2.jar in the project root directory.
+
+Step-2) Run Problem 2a — required input for 2b:
+        Run -> | bash scripts/run_2a.sh |
+        (see Problem 2a instructions above for details)
+
+Step-3) Run Problem 2b (TF-IDF Scorer):
+        Run -> | bash scripts/run_2b.sh |
+        Output: output/tfidf_output.tsv
