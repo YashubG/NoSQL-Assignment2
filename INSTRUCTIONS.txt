@@ -11,28 +11,30 @@ Step-6) All the results have been stored in the outputs/ folder.
 Instructions to run Problem 2a (Document Frequency):
 
 Pre-requisites:
-  - Hadoop must be running and accessible via the `hadoop` and `hdfs` commands.
-  - The Wikipedia dataset must be uploaded to HDFS at:
-      /user/$USER/input/wiki_full/Wikipedia-EN-20120601_ARTICLES
-  - The stopwords.txt file must be uploaded to HDFS at:
-      /user/$USER/stopwords.txt
-  - Java 11 and Maven must be installed.
+  - Hadoop must be installed and the `hadoop` command must be on PATH
+    (or at /opt/homebrew/opt/hadoop/bin/hadoop).
+  - The Wikipedia dataset archive must be available at:
+      ~/Downloads/Assignment 2/Wikipedia-EN-20120601_ARTICLES.tar.gz
+    (the script will auto-extract it into Data/ if needed).
+  - Java 17 must be installed.
 
-Step-1) Build the JAR file:
-        Run -> | bash build.sh |
-        This produces problem2.jar in the project root directory.
+Step-1) Run Problem 2a (Document Frequency + Top-100 extraction):
+        For the full dataset (10,000 articles):
+        Run -> | bash scripts/run_problem2.sh full |
 
-Step-2) Run Problem 2a (Document Frequency + Top-100 extraction):
-        Run -> | bash scripts/run_2a.sh |
-        This runs a two-job MapReduce pipeline:
-          Job 1 — Computes Document Frequency (DF) for every stemmed term
-                  across all 10,000 Wikipedia articles.
+        For a quick test with 50 articles:
+        Run -> | bash scripts/run_problem2.sh sample |
+
+        This compiles the code, builds a fat JAR, and runs a two-job
+        MapReduce pipeline:
+          Job 1 — Computes Document Frequency (DF) for every stemmed term.
           Job 2 — Extracts the top 100 terms by DF using a min-heap.
-        Output:
-          output/df_output.tsv      — Full DF listing (all terms)
-          output/df_top100.tsv      — Top 100 terms by document frequency
-        The top-100 file is also automatically uploaded to HDFS at
-          /user/$USER/friend_df_top100.tsv  (required input for Problem 2b).
+
+        Output (full dataset):
+          output/problem2a_df_full/part-r-00000     — Full DF listing (all terms)
+          output/problem2a_top100_full/part-r-00000  — Top 100 terms by DF
+          output/problem2a_df_full.tsv               — Same as above (convenience copy)
+          output/problem2a_top100_full.tsv            — Same as above (convenience copy)
 
 -----------------------------------------------------------------------
 
