@@ -1,15 +1,6 @@
 package src.inputformat;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 9d9b919 (Implement Problem 2a document frequency job)
-=======
->>>>>>> 3108bf7 (Initial commit for NoSQL Assignment 2)
-=======
 
->>>>>>> ece70d1 (.)
 import java.io.IOException;
 
 import org.apache.commons.logging.Log;

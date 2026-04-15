@@ -70,9 +70,10 @@ javac --release 17 -cp "$HADOOP_CP:$OPENNLP_JAR" -d "$BUILD_DIR" \
 	"$ROOT_DIR/src/inputformat/CustomFileInputFormat.java" \
 	"$ROOT_DIR/src/inputformat/CustomLineRecordReader.java" \
 	"$ROOT_DIR/src/problem2/Problem2a_DF.java"
+# Bundle OpenNLP classes into the jar (spaces in path break HADOOP_CLASSPATH)
+(cd "$BUILD_DIR" && jar xf "$OPENNLP_JAR")
 jar cf "$JAR_FILE" -C "$BUILD_DIR" .
 
-export HADOOP_CLASSPATH="$OPENNLP_JAR${HADOOP_CLASSPATH:+:$HADOOP_CLASSPATH}"
 "$HADOOP_CMD" jar "$JAR_FILE" src.problem2.Problem2a_DF \
 	"$ARTICLE_DIR" \
 	"$DF_OUTPUT" \

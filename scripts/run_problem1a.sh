@@ -1,42 +1,31 @@
 #!/bin/bash
 
-echo "[0] Starting Hadoop services..."
-start-dfs.sh || true
-start-yarn.sh || true
-sleep 3
-
 set -e
 
 echo "======================================="
-echo "Running Problem 1(a): Top 50 Words"
+echo "Running Problem 1(a): Local Mode"
 echo "======================================="
 
-# -------- PROJECT ROOT --------
 PROJECT_ROOT="$(pwd)"
 
-# -------- PATHS --------
 SRC_DIR="$PROJECT_ROOT/src"
 BUILD_DIR="$PROJECT_ROOT/build"
-JAR_NAME="problem1a.jar"
+JAR_NAME="problem1a_local.jar"
 
-INPUT_LOCAL="$PROJECT_ROOT/Data/Wikipedia-50-ARTICLES"
-STOPWORDS_LOCAL="$PROJECT_ROOT/Data/stopwords.txt"
+INPUT="$PROJECT_ROOT/Data/wiki_all_fixed.txt"
+STOPWORDS="$PROJECT_ROOT/Data/stopwords.txt"
+OUTPUT="$PROJECT_ROOT/output/problem1a_local"
 
-INPUT_HDFS="/wiki"
-OUTPUT_HDFS="/output1"
-STOPWORDS_HDFS="/stopwords.txt"
-
-# -------- CLEAN BUILD --------
-echo "[1] Cleaning build directory..."
-rm -rf "$BUILD_DIR"
+# -------- CLEAN --------
+echo "[1] Cleaning..."
+rm -rf "$BUILD_DIR" "$OUTPUT"
 mkdir -p "$BUILD_DIR"
 
 # -------- COMPILE --------
-echo "[2] Compiling Java files..."
+echo "[2] Compiling..."
 
 javac -classpath "$(hadoop classpath)" -d "$BUILD_DIR" \
-    "$SRC_DIR/inputformat/"*.java \
-    "$SRC_DIR/problem1/Problem1a_TopWords.java"
+    "$SRC_DIR/problem1/Problem1a_TopWords_Local.java"
 
 # -------- CREATE JAR --------
 echo "[3] Creating JAR..."
@@ -44,34 +33,26 @@ cd "$BUILD_DIR"
 jar -cvf "$JAR_NAME" .
 cd "$PROJECT_ROOT"
 
-# -------- CLEAN HDFS --------
-echo "[4] Cleaning HDFS..."
-hdfs dfs -rm -r -f "$INPUT_HDFS" || true
-hdfs dfs -rm -r -f "$OUTPUT_HDFS" || true
-hdfs dfs -rm -f "$STOPWORDS_HDFS" || true
+# -------- RUN --------
+echo "[4] Running job..."
 
-# -------- UPLOAD DATA --------
-echo "[5] Uploading dataset..."
-hdfs dfs -mkdir -p "$INPUT_HDFS"
-hdfs dfs -put "$INPUT_LOCAL"/* "$INPUT_HDFS"
+START=$(date +%s)
 
-# -------- UPLOAD STOPWORDS --------
-echo "[6] Uploading stopwords..."
-hdfs dfs -put "$STOPWORDS_LOCAL" "$STOPWORDS_HDFS"
+hadoop jar "$BUILD_DIR/$JAR_NAME" problem1.Problem1a_TopWords_Local \
+    "$INPUT" \
+    "$OUTPUT" \
+    "$STOPWORDS"
 
-# -------- RUN JOB --------
-echo "[7] Running Hadoop job..."
+END=$(date +%s)
 
-hadoop jar "$BUILD_DIR/$JAR_NAME" problem1.Problem1a_TopWords \
-    "$INPUT_HDFS" "$OUTPUT_HDFS" "$STOPWORDS_HDFS"
-
-# -------- DISPLAY OUTPUT --------
+# -------- OUTPUT --------
 echo "======================================="
 echo "Top 50 Words:"
 echo "======================================="
 
-hdfs dfs -cat "$OUTPUT_HDFS/part-r-00000" | sort -k2 -nr | head -50
+sort -k2 -nr "$OUTPUT/part-r-00000" | head -50
 
 echo "======================================="
-echo "DONE"
+echo "Runtime: $((END - START)) seconds"
 echo "======================================="
+echo "DONE"
