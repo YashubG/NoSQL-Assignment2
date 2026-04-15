@@ -3,7 +3,11 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OPENNLP_JAR="$ROOT_DIR/lib/opennlp-tools-1.9.3.jar"
-STOPWORDS_FILE="${STOPWORDS_FILE:-$ROOT_DIR/Data/stopwords.txt}"
+if [ -f "$ROOT_DIR/Data/stopwords.txt" ]; then
+	STOPWORDS_FILE="${STOPWORDS_FILE:-$ROOT_DIR/Data/stopwords.txt}"
+else
+	STOPWORDS_FILE="${STOPWORDS_FILE:-$ROOT_DIR/stopwords.txt}"
+fi
 BUILD_DIR="$ROOT_DIR/build/classes"
 JAR_FILE="$ROOT_DIR/build/problem2a-df.jar"
 HADOOP_CMD="${HADOOP_CMD:-hadoop}"
