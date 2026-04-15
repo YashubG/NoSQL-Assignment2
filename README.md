@@ -232,8 +232,9 @@ Computes the **Document Frequency (DF)** for every term across the full 10,000-a
 ./scripts/run_problem2.sh full
 ```
 
-**Sample output (top 100 by DF):**
+**Sample output (top 10 by DF, from full 10,000-article corpus):**
 ```
+s           9864
 apo         9518
 categori    9381
 refer       9340
@@ -243,7 +244,6 @@ link        8296
 thi         8190
 us          8063
 extern      8008
-two         7949
 ```
 
 Output files:
